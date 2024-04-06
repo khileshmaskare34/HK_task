@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <a href="/" class="link">Back to Home Page</a>
+            <h1>Add Task</h1>
+            <form action="/add_task" method="POST">
+                <div  class="input_box">
+                    <label for="user">Select User:</label>
+                    <select name="user" class="input" id="user">
+                        {{#each users}}
+                            <option value="{{id}}">{{name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div  class="input_box">
+                    <label for="task_name">Task Name:</label>
+                    <input type="text" id="task_name" name="task_name" placeholder="Enter Task Name" class="input" required>
+                </div>
+                <div  class="input_box">
+                    <label for="task_type">Task Type:</label>
+                    <select name="task_type" class="input" id="task_type" required >
+                        <option value="Pending">Pending</option>
+                        <option value="Done">Done</option>
+                    </select>
+                </div>
+                <div class="btn">
+                    <button class="button" type="submit">Add Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
